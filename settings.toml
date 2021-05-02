@@ -1,0 +1,8 @@
+[default]
+request_default_user_agent="fastapi-aiohttp-simple-example"
+
+[test]
+
+[qa]
+
+[prod]

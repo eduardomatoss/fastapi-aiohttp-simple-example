@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "==3.9.1"
+pytest = "==6.2.3"
+pytest-cov = "==2.11.1"
+bandit = "==1.7.0"
+aiounittest = "==1.4.0"
+aioresponses = "==0.7.2"
+
+[packages]
+aiohttp = "==3.7.4.post0"
+uvicorn = "==0.13.4"
+fastapi = "==0.63.0"
+dynaconf = "==3.1.4"
+requests = "==2.25.1"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
