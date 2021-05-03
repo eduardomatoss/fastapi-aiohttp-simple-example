@@ -10,8 +10,6 @@ services:
       target: "development"
     volumes:
       - ".:/app"
-    environment:
-      - ENV_FOR_DYNACONF=development
     ports:
       - "8000:8000"
     networks:

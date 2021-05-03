@@ -11,46 +11,22 @@ This is an example project of using fastapi with aiohttp
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/)
 
-### How to Install
+## Commands to help run the project
 
-```
-make local/install
-```
-
-### How to Build
-
-```
-make docker/build
-```
-
-### How to Run
-
-```
-make local/run
-
-make docker/run
-```
-
-### How to Test
-
-```
-make local/test
-
-make docker/test
-```
-
-### How to lint
-
-`make docker/lint` or `make local/lint` to lint
-
-`make docker/bandit` or `make local/bandit` to execute the bandit check
-
-`make docker/check-packages` or `make local/check-packages` to check for packages vulnerabilities
+Command | Docker | Locally | Description
+---- | ------- | ------- | -------
+install | `make docker/install` | `make local/install` | to install
+shell | - | `make local/shell` | to activate the python virtual env using pipenv
+tests | `make docker/test` | `make local/test` | to run the unit tests
+lint | `make docker/lint` | `make local/lint` | to lint
+bandit | `make docker/bandit` | `make local/bandit` | to execute the bandit check
+check-packages | `make docker/check-packages` | `make local/check-packages` | to check for packages vulnerabilities
+run | `make docker/run` | `make local/run` | to run the project
 
 **Helpful commands**
 
 *Please, check all available commands in the [Makefile](Makefile) for more information*.
 
-### Extras infos
+## Extras infos
 
 If you use the [vscode](https://code.visualstudio.com/) editor we have some examples of [launch.json](.docs/vscode.md) to speed up your tests

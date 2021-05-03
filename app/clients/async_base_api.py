@@ -3,7 +3,6 @@ from typing import Dict, Optional
 from dataclasses import dataclass, field
 
 from aiohttp import ClientSession, ClientTimeout, TCPConnector
-from dynaconf import settings
 
 
 @dataclass
@@ -27,17 +26,14 @@ class AsyncBaseApi:
         return {
             "Accept": "application/json",
             "Content-Type": "application/json",
-            "User-Agent": settings("request_default_user_agent"),
+            "User-Agent": "fastapi-aiohttp-simple-example",
         }
 
     @classmethod
     def get_aiohttp_client(cls) -> ClientSession:
         if cls.aiohttp_client is None:
-            timeout = ClientTimeout(total=int(settings("request_default_timeout", 30)))
-            connector = TCPConnector(
-                family=AF_INET,
-                limit_per_host=int(settings("default_size_pool_aiohttp", 10)),
-            )
+            timeout = ClientTimeout(total=30)
+            connector = TCPConnector(family=AF_INET, limit_per_host=10)
             cls.aiohttp_client = ClientSession(timeout=timeout, connector=connector)
 
         return cls.aiohttp_client

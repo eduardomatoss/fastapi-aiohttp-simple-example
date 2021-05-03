@@ -15,4 +15,3 @@ COPY . .
 FROM dependencies AS production
 COPY app app
 COPY run.py .
-COPY settings.toml .

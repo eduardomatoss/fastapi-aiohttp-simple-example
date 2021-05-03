@@ -25,7 +25,7 @@ local/run:
 	python run.py
 
 local/test:
-	ENV_FOR_DYNACONF=test python -m pytest -c tests/pytest.ini \
+	python -m pytest -c tests/pytest.ini \
 	--pyargs ./tests -v --junitxml=results.xml \
 	--cov-fail-under 100 --cov-report xml \
 	--cov-report term \
@@ -58,7 +58,7 @@ docker/down:
 	CURRENT_UID=${DOCKER_USER} docker-compose down --remove-orphans
 
 docker/test:
-	CURRENT_UID=${DOCKER_USER} docker-compose run -e ENV_FOR_DYNACONF=test fastapi-aiohttp-simple-example \
+	CURRENT_UID=${DOCKER_USER} docker-compose run fastapi-aiohttp-simple-example \
 	python -m pytest -c tests/pytest.ini \
 	--pyargs ./tests -v  \
 	--cov-fail-under 100 --cov-report xml \
