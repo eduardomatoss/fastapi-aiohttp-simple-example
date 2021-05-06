@@ -1,0 +1,20 @@
+version: "3.4"
+
+services:
+  fastapi-aiohttp-simple-example:
+    tty: true
+    image: "eduardomatoss/fastapi-aiohttp-simple-example"
+    stdin_open: true
+    build:
+      context: .
+      target: "development"
+    volumes:
+      - ".:/app"
+    ports:
+      - "8000:8000"
+    networks:
+      - db_nw
+
+networks:
+  db_nw:
+    driver: bridge

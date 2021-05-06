@@ -1,0 +1,2 @@
+[bandit]
+exclude: .docs,.github
