@@ -1,13 +1,14 @@
-# fastapi-aiohttp-simple-example
+# fastapi-aiohttp-simple-example [![Python 3.8](https://img.shields.io/badge/python-3.8.9-blue.svg)](https://www.python.org/downloads/release/python-389/)
 
-This is an example project of using fastapi with aiohttp
+This is an example of a [FastAPI](https://fastapi.tiangolo.com/) project with [aiohttp](https://docs.aiohttp.org/en/stable/)
 
 ## Technology and Resources
 
-- [Python 3.8.0](https://www.python.org/downloads/release/python-380/)
+- [Python 3.8.9](https://www.python.org/downloads/release/python-389/)
 - [Pipenv](https://github.com/pypa/pipenv)
 - [FastAPI](https://github.com/tiangolo/fastapi)
 - [Uvicorn](https://github.com/encode/uvicorn)
+- [aiohttp](https://github.com/aio-libs/aiohttp)
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/)
 
