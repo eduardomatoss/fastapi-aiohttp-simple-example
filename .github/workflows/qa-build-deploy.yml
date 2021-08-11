@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  run_tests:
+  deploy_qa:
     name: "Run Tests"
     runs-on: ubuntu-18.04
     steps:

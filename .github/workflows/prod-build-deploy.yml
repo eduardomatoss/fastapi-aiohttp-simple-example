@@ -4,7 +4,7 @@ on:
     types: [published]
 
 jobs:
-  run_tests:
+  deploy_prod:
     name: "Run Tests"
     runs-on: ubuntu-18.04
     steps:
