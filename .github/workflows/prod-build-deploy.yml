@@ -1,0 +1,31 @@
+name: build-deploy-prod
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy_prod:
+    name: "Run Tests"
+    runs-on: ubuntu-18.04
+    steps:
+      - run: echo "Running build and test for ${{ github.ref }} branch"
+
+      - name: Check out repository code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Docker Image Version
+        id: "determine-version"
+        run: "echo \"::set-output name=version::$(echo ${GITHUB_SHA} | cut -c1-7)\""
+
+      - run: echo ${{ steps.determine-version.outputs.version }}
+
+      - name: Build project
+        run: make docker/build
+
+      - name: Running lint/bandit/check-packages
+        run: make docker/verify
+
+      - name: Running test
+        run: make docker/test
