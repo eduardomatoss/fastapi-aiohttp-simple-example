@@ -1,4 +1,4 @@
-# fastapi-aiohttp-simple-example [![Python 3.8](https://img.shields.io/badge/python-3.8.9-blue.svg)](https://www.python.org/downloads/release/python-389/)
+# fastapi-aiohttp-simple-example [![Python 3.8](https://img.shields.io/badge/python-3.8.9-blue.svg)](https://www.python.org/downloads/release/python-389/) [![build-deploy-prod](https://github.com/eduardomatoss/fastapi-aiohttp-simple-example/actions/workflows/prod-build-deploy.yml/badge.svg)](https://github.com/eduardomatoss/fastapi-aiohttp-simple-example/actions/workflows/prod-build-deploy.yml)
 
 This is an example of a [FastAPI](https://fastapi.tiangolo.com/) project with [aiohttp](https://docs.aiohttp.org/en/stable/)
 
