@@ -15,6 +15,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Docker Image Version
+        id: "determine-version"
+        run: "echo \"::set-output name=version::$(echo ${GITHUB_SHA} | cut -c1-7)\""
+
+      - run: echo ${{ steps.determine-version.outputs.version }}
+
       - name: Build project
         run: make docker/build
 
