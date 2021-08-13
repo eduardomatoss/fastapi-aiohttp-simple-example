@@ -26,6 +26,9 @@ jobs:
       - name: Build project
         run: make docker/build
 
+      - name: Run Echo
+        run: echo "tei tei"
+
       - name: Running lint/bandit/check-packages
         run: make docker/verify
 
