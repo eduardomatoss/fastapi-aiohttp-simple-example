@@ -1,12 +1,14 @@
 name: build-deploy-prod
 on:
   release:
-    types: [published]
+    types: [released]
+    branches: [main]
 
 jobs:
   deploy_prod:
     name: "Run Tests"
     runs-on: ubuntu-18.04
+    if: "startsWith(github.ref, 'refs/tags/') && github.ref == 'refs/heads/main'"
     steps:
       - run: echo "Running build and test for ${{ github.ref }} branch"
 
@@ -16,10 +18,10 @@ jobs:
           fetch-depth: 0
 
       - name: Docker Image Version
-        id: "determine-version"
-        run: "echo \"::set-output name=version::$(echo ${GITHUB_SHA} | cut -c1-7)\""
+        id: "determine-tag"
+        run: "echo \"::set-output name=tag::${GITHUB_REF#refs/tags/}\""
 
-      - run: echo ${{ steps.determine-version.outputs.version }}
+      - run: echo ${{ steps.determine-tag.outputs.tag }}
 
       - name: Build project
         run: make docker/build
