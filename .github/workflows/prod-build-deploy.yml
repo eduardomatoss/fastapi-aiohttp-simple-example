@@ -2,13 +2,11 @@ name: build-deploy-prod
 on:
   release:
     types: [released]
-    branches: [main]
 
 jobs:
   deploy_prod:
     name: "Run Tests"
     runs-on: ubuntu-18.04
-    if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - run: echo "Running build and test for ${{ github.ref }} branch"
 
