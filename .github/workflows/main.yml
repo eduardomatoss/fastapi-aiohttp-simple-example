@@ -10,8 +10,6 @@ jobs:
 
       - name: Check out repository code
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
 
       - name: Build project
         run: make docker/build

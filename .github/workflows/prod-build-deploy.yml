@@ -14,8 +14,6 @@ jobs:
 
       - name: Check out repository code
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
       - name: Docker Image Version
         id: "determine-tag"
@@ -25,9 +23,6 @@ jobs:
 
       - name: Build project
         run: make docker/build
-
-      - name: Run Echo
-        run: echo "tei tei"
 
       - name: Running lint/bandit/check-packages
         run: make docker/verify
